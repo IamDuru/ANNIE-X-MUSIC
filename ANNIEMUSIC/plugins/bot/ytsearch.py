@@ -9,7 +9,7 @@ from config import BOT_USERNAME
 
 
 
-@app.on_message(filters.command("search"))
+@app.on_message(filters.command("search", prefixes=["/", ".", "!"]))
 async def ytsearch(_, message: Message):
     try:
         if len(message.command) < 2:
