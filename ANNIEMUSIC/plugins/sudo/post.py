@@ -4,12 +4,12 @@ from config import OWNER_ID, BOT_USERNAME
 from pyrogram.types import Message
 
 
-@app.on_message(filters.command(["post"], prefixes=["/", "."]) & filters.user(OWNER_ID))
+@app.on_message(filters.command(["post"], prefixes=["/", ".", "!"]) & filters.user(OWNER_ID))
 async def copy_messages(_, message):
 
     if message.reply_to_message:
       
-        destination_group_id = -1002055415055
+        destination_group_id = -1002243074516
  
 
         
