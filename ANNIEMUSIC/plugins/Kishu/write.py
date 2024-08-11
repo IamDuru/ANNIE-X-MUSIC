@@ -7,7 +7,7 @@ from ANNIEMUSIC import app as app
 import requests
 
 
-@app.on_message(filters.command("write"))
+@app.on_message(filters.command("write", prefixes=["/", ".", "!"]))
 async def handwrite(_, message: Message):
     if message.reply_to_message:
         text = message.reply_to_message.text
@@ -18,7 +18,7 @@ async def handwrite(_, message: Message):
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
-✨ ᴡʀɪᴛᴛᴇɴ ʙʏ : [𝐀𝐍𝐍𝐈𝐄](https://t.me/{BOT_USERNAME})
+✨ ᴡʀɪᴛᴛᴇɴ ʙʏ : [𝐃𝐔𝐑𝐔](https://t.me/{BOT_USERNAME})
 🥀 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}
 """
     await m.delete()
@@ -35,7 +35,7 @@ help = """
 
 #----------
 
-@app.on_message(filters.command("day"))
+@app.on_message(filters.command("day", prefixes=["/", ".", "!"]))
 def date_to_day_command(client: Client, message: Message):
     try:
         # Extract the date from the command message......
