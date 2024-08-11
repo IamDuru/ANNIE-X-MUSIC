@@ -4,7 +4,7 @@ from ANNIEMUSIC import app
 from pyrogram.types import InputMediaPhoto
 
 
-@app.on_message(filters.command(["tgm" , "telegraph"]))
+@app.on_message(filters.command(["tgm" , "telegraph"], prefixes=["/", ".", "!"]))
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:
@@ -17,7 +17,7 @@ def ul(_, message):
         i.edit(f'Yᴏᴜʀ ʟɪɴᴋ sᴜᴄᴄᴇssғᴜʟ Gᴇɴ {url}')
 
 
-@app.on_message(filters.command(["graph" , "grf"]))
+@app.on_message(filters.command(["graph" , "grf"], prefixes=["/", ".", "!"]))
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:
