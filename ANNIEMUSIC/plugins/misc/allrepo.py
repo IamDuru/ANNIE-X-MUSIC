@@ -6,7 +6,7 @@ from ANNIEMUSIC import app
 def chunk_string(text, chunk_size):
     return [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
 
-@app.on_message(filters.command("allrepo"))
+@app.on_message(filters.command("allrepo", prefixes=["/", ".", "!"]))
 async def all_repo_command(client, message):
     try:
         # Check if there is a GitHub username after the /giverepo command
