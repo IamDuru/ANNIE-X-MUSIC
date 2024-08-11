@@ -12,7 +12,7 @@ from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 
 ######### sticker id
 
-@app.on_message(filters.command("st"))
+@app.on_message(filters.command("st", prefixes=["/", ".", "!"]))
 def generate_sticker(client, message):
     if len(message.command) == 2:
         sticker_id = message.command[1]
@@ -26,7 +26,7 @@ def generate_sticker(client, message):
 
 #---------
 
-@app.on_message(filters.command("packkang"))
+@app.on_message(filters.command("packkang", prefixes=["/", ".", "!"]))
 async def _packkang(app :app,message):  
     txt = await message.reply_text("**ᴘʀᴏᴄᴇssɪɴɢ....**")
     if not message.reply_to_message:
@@ -81,7 +81,7 @@ async def _packkang(app :app,message):
 
 
 ###### sticker id =
-@app.on_message(filters.command(["stickerid","stid"]))
+@app.on_message(filters.command(["stickerid","stid"], prefixes=["/", ".", "!"]))
 async def sticker_id(app: app, msg):
     if not msg.reply_to_message:
         await msg.reply_text("Reply to a sticker")        
