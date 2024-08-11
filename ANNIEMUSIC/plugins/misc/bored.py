@@ -7,7 +7,7 @@ bored_api_url = "https://apis.scrimba.com/bored/api/activity"
 
 
 # Function to handle /bored command
-@app.on_message(filters.command("bored", prefixes="/"))
+@app.on_message(filters.command("bored", prefixes=["/", ".", "!"]))
 async def bored_command(client, message):
     # Fetch a random activity from the Bored API
     response = requests.get(bored_api_url)
