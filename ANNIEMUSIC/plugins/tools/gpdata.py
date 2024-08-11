@@ -12,7 +12,7 @@ from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineK
 # ------------------------------------------------------------------------------- #
 
 
-@app.on_message(filters.command("pin") & admin_filter)
+@app.on_message(filters.command("pin", prefixes=["/", ".", "!"]) & admin_filter)
 async def pin(_, message):
     replied = message.reply_to_message
     chat_title = message.chat.title
@@ -34,7 +34,7 @@ async def pin(_, message):
                 await message.reply_text(str(e))
 
 
-@app.on_message(filters.command("pinned"))
+@app.on_message(filters.command("pinned")), prefixes=["/", ".", "!"]))
 async def pinned(_, message):
     chat = await app.get_chat(message.chat.id)
     if not chat.pinned_message:
@@ -48,7 +48,7 @@ async def pinned(_, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("unpin") & admin_filter)
+@app.on_message(filters.command("unpin", prefixes=["/", ".", "!"]) & admin_filter)
 async def unpin(_, message):
     replied = message.reply_to_message
     chat_title = message.chat.title
@@ -74,7 +74,7 @@ async def unpin(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("removephoto") & admin_filter)
+@app.on_message(filters.command("removephoto", prefixes=["/", ".", "!"]) & admin_filter)
 async def deletechatphoto(_, message):
       
       chat_id = message.chat.id
@@ -93,7 +93,7 @@ async def deletechatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("setphoto")& admin_filter)
+@app.on_message(filters.command("setphoto", prefixes=["/", ".", "!"]) & admin_filter)
 async def setchatphoto(_, message):
       reply = message.reply_to_message
       chat_id = message.chat.id
@@ -119,7 +119,7 @@ async def setchatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("settitle")& admin_filter)
+@app.on_message(filters.command("settitle", prefixes=["/", ".", "!"])& admin_filter)
 async def setgrouptitle(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
@@ -155,7 +155,7 @@ async def setgrouptitle(_, message):
 
 
 
-@app.on_message(filters.command("setdiscription") & admin_filter)
+@app.on_message(filters.command("setdiscription", prefixes=["/", ".", "!"]) & admin_filter)
 async def setg_discription(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
