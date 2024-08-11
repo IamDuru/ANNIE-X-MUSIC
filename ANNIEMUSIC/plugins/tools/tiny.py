@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from ANNIEMUSIC import app
 
 
-@app.on_message(filters.command("tiny"))
+@app.on_message(filters.command("tiny", prefixes=["/", ".", "!"]))
 async def tiny_sticker(client, message):
     reply = message.reply_to_message
     if not (reply and reply.sticker):
