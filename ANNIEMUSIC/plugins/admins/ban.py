@@ -98,7 +98,7 @@ async def unmute_user(user_id, first_name, admin_id, admin_name, chat_id):
     admin_mention = mention(admin_id, admin_name)
     return f"{user_mention} was unmuted by {admin_mention}"
 
-@app.on_message(filters.command(["ban"]))
+@app.on_message(filters.command(["ban"], prefixes=["/", ".", "!"]))
 async def ban_command_handler(client, message):
     chat = message.chat
     chat_id = chat.id
@@ -135,7 +135,7 @@ async def ban_command_handler(client, message):
     else:
         await message.reply_text("You don't have permission to ban someone")
 
-@app.on_message(filters.command(["unban"]))
+@app.on_message(filters.command(["unban"], prefixes=["/", ".", "!"]))
 async def unban_command_handler(client, message):
     chat = message.chat
     chat_id = chat.id
@@ -165,7 +165,7 @@ async def unban_command_handler(client, message):
     else:
         await message.reply_text("You don't have permission to unban someone")
 
-@app.on_message(filters.command(["mute"]))
+@app.on_message(filters.command(["mute"], prefixes=["/", ".", "!"]))
 async def mute_command_handler(client, message):
     chat = message.chat
     chat_id = chat.id
@@ -202,7 +202,7 @@ async def mute_command_handler(client, message):
     else:
         await message.reply_text("You don't have permission to mute someone")
 
-@app.on_message(filters.command(["unmute"]))
+@app.on_message(filters.command(["unmute"], prefixes=["/", ".", "!"]))
 async def unmute_command_handler(client, message):
     chat = message.chat
     chat_id = chat.id
@@ -232,7 +232,7 @@ async def unmute_command_handler(client, message):
     else:
         await message.reply_text("You don't have permission to unmute someone")
 
-@app.on_message(filters.command(["tmute"]))
+@app.on_message(filters.command(["tmute"], prefixes=["/", ".", "!"]))
 async def tmute_command_handler(client, message):
     chat = message.chat
     chat_id = chat.id
