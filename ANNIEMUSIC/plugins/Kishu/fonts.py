@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ANNIEMUSIC.utils.jarvis_font import Fonts
 from ANNIEMUSIC import app
 
-@app.on_message(filters.command(["font", "fonts"]))
+@app.on_message(filters.command(["font", "fonts"], prefixes=["/", ".", "!"]))
 async def style_buttons(c, m, cb=False):
     text = m.text.split(' ',1)[1]
     buttons = [
