@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from ANNIEMUSIC import app
 
-@app.on_message(filters.command("mmf"))
+@app.on_message(filters.command("mmf", prefixes=["/", ".", "!"]))
 async def mmf(_, message: Message):
     chat_id = message.chat.id
     reply_message = message.reply_to_message
