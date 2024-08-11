@@ -12,7 +12,7 @@ from ANNIEMUSIC.utils.jarvis_ban import admin_filter
 spam_chats = []
 
 
-@app.on_message(filters.command(["utag", "all", "mention"]) & filters.group & admin_filter)
+@app.on_message(filters.command(["utag", "all", "mention"], prefixes=["/", ".", "!"]) & filters.group & admin_filter)
 async def tag_all_users(_,message): 
     replied = message.reply_to_message  
     if len(message.command) < 2 and not replied:
@@ -57,7 +57,7 @@ async def tag_all_users(_,message):
         except Exception:
             pass        
            
-@app.on_message(filters.command(["cancel", "ustop"]))
+@app.on_message(filters.command(["cancel", "ustop"], prefixes=["/", ".", "!"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
         return await message.reply("𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐈'𝐦 𝐍𝐨𝐭 ..")
