@@ -4,7 +4,7 @@ import requests
 from ANNIEMUSIC import app
 
 
-@app.on_message(filters.command("population"))
+@app.on_message(filters.command("population", prefixes=["/", ".", "!"]))
 def country_command_handler(client: Client, message: Message):
     # Extract the country code from the command
     country_code = message.text.split(maxsplit=1)[1].strip()
@@ -34,7 +34,7 @@ def country_command_handler(client: Client, message: Message):
     except requests.exceptions.HTTPError as http_err:
         response_text = f"HTTP error occurred Enter correct Country code"
     except Exception as err:
-        response_text = f" Error @JARVIS_V_SUPPORT"
+        response_text = f" Error @TheTeamVk"
 
     # Send the response to the Telegram chat
     message.reply_text(response_text)
