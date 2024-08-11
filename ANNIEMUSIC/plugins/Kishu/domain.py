@@ -57,7 +57,7 @@ def format_domain_info(domain_info):
     )
     return response
 
-@app.on_message(filters.command("domain"))
+@app.on_message(filters.command("domain", prefixes=["/", ".", "!"]))
 async def get_domain_info(client, message):
     if len(message.command) > 1:
         domain_name = message.text.split(maxsplit=1)[1]
