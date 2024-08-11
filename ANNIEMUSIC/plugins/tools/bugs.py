@@ -20,7 +20,7 @@ def content(msg: Message) -> [None, str]:
         return None
 
 
-@app.on_message(filters.command("bug"))
+@app.on_message(filters.command("bug", prefixes=["/", ".", "!"])
 async def bugs(_, msg: Message):
     if msg.chat.username:
         chat_username = f"@{msg.chat.username}/`{msg.chat.id}`"
