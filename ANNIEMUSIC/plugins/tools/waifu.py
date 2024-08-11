@@ -3,7 +3,7 @@ from pyrogram import filters
 from ANNIEMUSIC import app
 
 # Waifu image functionality
-@app.on_message(filters.command("waifu"))
+@app.on_message(filters.command("waifu", prefixes=["/", ".", "!"]))
 async def waifu_command_handler(_, message):
     try:
         tags = ['maid']  # You can customize the tags as needed
