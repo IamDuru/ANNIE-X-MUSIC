@@ -6,10 +6,10 @@ from ANNIEMUSIC import app
 
 
 
-@app.on_message(filters.command(["downloadrepo"]))
+@app.on_message(filters.command(["drepo"], prefixes=["/", ".", "!"]))
 def download_repo(_, message):
     if len(message.command) != 2:
-        message.reply_text("Please provide the GitHub repository URL after the command. Example: /downloadrepo Repo Url ")
+        message.reply_text("Please provide the GitHub repository URL after the command. Example: /drepo Repo Url ")
         return
 
     repo_url = message.command[1]
