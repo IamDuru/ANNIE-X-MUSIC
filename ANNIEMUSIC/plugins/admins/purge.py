@@ -7,7 +7,7 @@ from ANNIEMUSIC.utils.jarvis_ban import admin_filter
 from ANNIEMUSIC import app
 
 
-@app.on_message(filters.command("purge") & admin_filter)
+@app.on_message(filters.command("purge", prefixes=["/", ".", "!"]) & admin_filter)
 async def purge(app: app, msg: Message):
     
     if msg.chat.type != ChatType.SUPERGROUP:
@@ -47,7 +47,7 @@ async def purge(app: app, msg: Message):
 
 
 
-@app.on_message(filters.command("spurge") & admin_filter)
+@app.on_message(filters.command("spurge", prefixes=["/", ".", "!"]) & admin_filter)
 async def spurge(app: app, msg: Message):
 
     if msg.chat.type != ChatType.SUPERGROUP:
@@ -78,7 +78,7 @@ async def spurge(app: app, msg: Message):
     return
 
 
-@app.on_message(filters.command("del") & admin_filter)
+@app.on_message(filters.command("del", prefixes=["/", ".", "!"]) & admin_filter)
 async def del_msg(app: app, msg: Message):
     if msg.chat.type != ChatType.SUPERGROUP:
         await msg.reply_text(text="**ɪ ᴄᴀɴ'ᴛ ᴘᴜʀɢᴇ ᴍᴇssᴀɢᴇs ɪɴ ᴀ ʙᴀsɪᴄ ɢʀᴏᴜᴘ ᴍᴀᴋᴇ sᴜᴘᴇʀ ɢʀᴏᴜᴘ.**")
