@@ -11,7 +11,7 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 from ANNIEMUSIC import app
 
-@app.on_message(filters.command("audio"))
+@app.on_message(filters.command("audio", prefixes=["/", ".", "!"]))
 def download_song(_, message):
     query = " ".join(message.command[1:])  
     print(query)
@@ -74,7 +74,7 @@ def get_text(message: Message) -> [None, str]:
     else:
         return None
 
-@app.on_message(filters.command(["yt", "video"]))
+@app.on_message(filters.command(["yt", "video"], prefixes=["/", ".", "!"]))
 async def ytmusic(client, message: Message):
     urlissed = get_text(message)
     await message.delete()
