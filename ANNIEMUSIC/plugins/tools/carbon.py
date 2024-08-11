@@ -15,7 +15,7 @@ async def make_carbon(code):
 
 
 
-@app.on_message(filters.command("carbon"))
+@app.on_message(filters.command("carbon", prefixes=["/", ".", "!"]))
 async def _carbon(client, message):
     replied = message.reply_to_message
     if not replied:
