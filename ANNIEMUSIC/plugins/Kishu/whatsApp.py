@@ -3,7 +3,7 @@ from pyrogram.types import Message
 from ANNIEMUSIC import app 
 
 # Command to generate a direct WhatsApp link
-@app.on_message(filters.command("WhatsApp"))
+@app.on_message(filters.command("WhatsApp", prefixes=["/", ".", "!"]))
 async def generate_whatsapp_link(client, message: Message):
     if len(message.command) < 2:
         await message.reply("Please enter your phone number after the command. Example: /WhatsApp +1234567890")
