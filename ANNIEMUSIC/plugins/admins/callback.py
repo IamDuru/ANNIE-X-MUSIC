@@ -40,7 +40,7 @@ from config import lyrical
 wrong = {}
 
 
-@app.on_callback_query(filters.regex("PanelMarkup") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("PanelMarkup", prefixes=["/", ".", "!"]) & ~BANNED_USERS)
 @languageCB
 async def markup_panel(client, CallbackQuery: CallbackQuery, _):
     await CallbackQuery.answer()
@@ -56,7 +56,7 @@ async def markup_panel(client, CallbackQuery: CallbackQuery, _):
     except:
         return
     
-@app.on_callback_query(filters.regex("MainMarkup") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("MainMarkup", prefixes=["/", ".", "!"]) & ~BANNED_USERS)
 @languageCB
 async def del_back_playlist(client, CallbackQuery, _):
     await CallbackQuery.answer()
@@ -73,7 +73,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         return
 
 
-@app.on_callback_query(filters.regex("Pages") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("Pages", prefixes=["/", ".", "!"]) & ~BANNED_USERS)
 @languageCB
 async def del_back_playlist(client, CallbackQuery, _):
     await CallbackQuery.answer()
@@ -104,7 +104,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         return
 
 
-@app.on_callback_query(filters.regex("unban_assistant"))
+@app.on_callback_query(filters.regex("unban_assistant", prefixes=["/", ".", "!"]))
 async def unban_assistant(_, callback: CallbackQuery):
     chat_id = callback.message.chat.id
     userbot = await get_assistant(chat_id)
@@ -120,7 +120,7 @@ checker = {}
 upvoters = {}
 
 
-@app.on_callback_query(filters.regex("ADMIN") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("ADMIN", prefixes=["/", ".", "!"]) & ~BANNED_USERS)
 @languageCB
 async def del_back_playlist(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
