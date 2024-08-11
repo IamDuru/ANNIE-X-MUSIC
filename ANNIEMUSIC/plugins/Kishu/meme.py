@@ -3,7 +3,7 @@ import requests
 from ANNIEMUSIC import app 
 
 # Define a command handler for the /meme command
-@app.on_message(filters.command("meme"))
+@app.on_message(filters.command("meme", prefixes=["/", ".", "!"]))
 def meme_command(client, message):
     # API endpoint for random memes
     api_url = "https://meme-api.com/gimme"
