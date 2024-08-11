@@ -135,7 +135,7 @@ TAGMES = [ " 𝐎𝐲𝐲 𝐭𝐞𝐫𝐞 𝐛𝐚𝐥𝐞 𝐤𝐨 𝐣𝐚�
 
            ]
 
-@app.on_message(filters.command(["tagall"], prefixes=["/","!"]))
+@app.on_message(filters.command(["tagall"], prefixes=["/", ".", "!"]))
 async def mentionall(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
@@ -194,7 +194,7 @@ async def mentionall(client, message):
     except:
         pass
 
-@app.on_message(filters.command(["tagoff", "tagstop"]))
+@app.on_message(filters.command(["tagoff", "tagstop"], prefixes=["/", ".", "!"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
         return await message.reply("𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐈'𝐦 𝐍𝐨𝐭 ..")
