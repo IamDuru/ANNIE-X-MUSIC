@@ -12,7 +12,7 @@ from ANNIEMUSIC.utils.inline import supp_markup
 from config import BANNED_USERS
 
 
-@app.on_message(filters.command("ping", prefixes=["/"]) & ~BANNED_USERS)
+@app.on_message(filters.command("ping", prefixes=["/", ".", "!"])) & ~BANNED_USERS)
 @language
 async def ping_com(client, message: Message, _):
     start = datetime.now()
