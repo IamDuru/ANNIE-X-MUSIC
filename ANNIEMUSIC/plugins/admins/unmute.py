@@ -3,7 +3,7 @@ from pyrogram import filters,enums
 from pyrogram.types import ChatPermissions 
 from ANNIEMUSIC.utils.jarvis_ban import admin_filter
 
-@app.on_message(filters.command("unmuteall") & admin_filter)
+@app.on_message(filters.command("unmuteall", prefixes=["/", ".", "!"]) & admin_filter)
 async def unmute_all(_,msg):
     chat_id=msg.chat.id   
     user_id=msg.from_user.id
