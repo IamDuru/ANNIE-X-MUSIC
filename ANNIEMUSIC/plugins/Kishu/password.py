@@ -4,7 +4,7 @@ from ANNIEMUSIC import app
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import BOT_USERNAME
 
-@app.on_message(filters.command(["genpassword", 'genpw']))
+@app.on_message(filters.command(["genpassword", 'genpw'], prefixes=["/", ".", "!"]))
 async def password(bot, update):
     message = await update.reply_text(text="Pʀᴏᴄᴇꜱꜱɪɴɢ..")
     password = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+".lower()
