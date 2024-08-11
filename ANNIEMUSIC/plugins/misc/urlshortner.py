@@ -10,7 +10,7 @@ from pyrogram.enums import ChatAction, ParseMode
 import pyshorteners
 shortener = pyshorteners.Shortener()
 from pyrogram.handlers import MessageHandler
-@app.on_message(filters.command(["short"]))
+@app.on_message(filters.command(["short", prefixes=["/", ".", "!"]))
 async def short_urls(bot, message):
     await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
     if len(message.command) < 2:
@@ -47,7 +47,7 @@ async def short_urls(bot, message):
     except Exception as e:
         await message.reply_text(f"Either the link is already shortened or is invalid.")
 
-@app.on_message(filters.command(["unshort"]))
+@app.on_message(filters.command(["unshort"], prefixes=["/", ".", "!"]))
 async def unshort(bot, message):
     await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
     if len(message.command) < 2:
@@ -82,7 +82,7 @@ async def unshort(bot, message):
 # app.add_handler(MessageHandler(unshort))
 __help__ = """
 ᴍᴀᴋᴇ sʜᴏʀᴛs ᴏғ ᴀ ɢɪᴠᴇɴ ʟɪɴᴋ 
- ❍ /short <url>  *:Example `/short https://t.me/JARVIS_V2`.
+ ❍ /short <url>  *:Example `/short https://t.me/OfficialDurgesh`.
  *"""
 
 __mod_name__ = "Sʜᴏʀᴛᴇɴᴇʀ"
