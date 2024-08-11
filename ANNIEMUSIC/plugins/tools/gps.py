@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 from geopy.distance import great_circle
 from ANNIEMUSIC import app
 
-@app.on_message(filters.command(["gps"]))
+@app.on_message(filters.command(["gps"], prefixes=["/", ".", "!"]))
 async def gps(bot, message):
     if len(message.command) < 2:
         return await message.reply_text("Example:\n\n/gps [latitude, longitude]")
