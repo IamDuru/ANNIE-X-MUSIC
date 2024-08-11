@@ -5,7 +5,7 @@ from MukeshAPI import api
 from pyrogram.enums import ChatAction,ParseMode
 from ANNIEMUSIC import app
 
-@app.on_message(filters.command("imagine"))
+@app.on_message(filters.command("imagine", prefixes=["/", ".", "!"]))
 async def imagine_(b, message: Message):
     if message.reply_to_message:
         text = message.reply_to_message.text
@@ -21,7 +21,7 @@ async def imagine_(b, message: Message):
         caption = f"""
     💘sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ : {text}
 
-    ✨ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ : @AnnieMusicRobot
+    ✨ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ : @DuruXbot
     🥀ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}
     """
         await Jarvis.delete()
