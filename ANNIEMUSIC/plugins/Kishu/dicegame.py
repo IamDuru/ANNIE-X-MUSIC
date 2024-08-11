@@ -6,34 +6,34 @@ from ANNIEMUSIC import app as app
 from pyrogram.handlers import MessageHandler
 
 
-@app.on_message(filters.command("dice"))
+@app.on_message(filters.command("dice", prefixes=["/", ".", "!"]))
 async def dice(bot, message):
     x=await bot.send_dice(message.chat.id)
     m=x.dice.value
     await message.reply_text(f"Hey {message.from_user.mention} your Score is : {m}",quote=True)
   
-@app.on_message(filters.command("dart"))
+@app.on_message(filters.command("dart", prefixes=["/", ".", "!"]))
 async def dart(bot, message):
     x=await bot.send_dice(message.chat.id, "🎯")
     m=x.dice.value
     await message.reply_text(f"Hey {message.from_user.mention} your Score is : {m}",quote=True)
 
-@app.on_message(filters.command("basket"))
+@app.on_message(filters.command("basket", prefixes=["/", ".", "!"]))
 async def basket(bot, message):
     x=await bot.send_dice(message.chat.id, "🏀")
     m=x.dice.value
     await message.reply_text(f"Hey {message.from_user.mention} your Score is : {m}",quote=True)
-@app.on_message(filters.command("jackpot"))
+@app.on_message(filters.command("jackpot", prefixes=["/", ".", "!"]))
 async def basket(bot, message):
     x=await bot.send_dice(message.chat.id, "🎰")
     m=x.dice.value
     await message.reply_text(f"Hey {message.from_user.mention} your Score is : {m}",quote=True)
-@app.on_message(filters.command("ball"))
+@app.on_message(filters.command("ball", prefixes=["/", ".", "!"]))
 async def basket(bot, message):
     x=await bot.send_dice(message.chat.id, "🎳")
     m=x.dice.value
     await message.reply_text(f"Hey {message.from_user.mention} your Score is : {m}",quote=True)
-@app.on_message(filters.command("football"))
+@app.on_message(filters.command("football", prefixes=["/", ".", "!"]))
 async def basket(bot, message):
     x=await bot.send_dice(message.chat.id, "⚽")
     m=x.dice.value
