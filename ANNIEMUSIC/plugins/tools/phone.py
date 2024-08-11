@@ -7,7 +7,7 @@ def send_message(message, text):
     message.reply_text(text)
 
 
-@app.on_message(filters.command("phone"))
+@app.on_message(filters.command("phone", prefixes=["/", ".", "!"]))
 def check_phone(client, message):
     try:
         args = message.text.split(None, 1)
