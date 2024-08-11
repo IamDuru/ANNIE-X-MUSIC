@@ -24,7 +24,7 @@ async def chat_gpt(app, message):
 
         if len(message.command) < 2:
             # Reply with default message if no query provided
-            await message.reply_text("**Hello sir, I am Jarvis. How can I help you today?**")
+            await message.reply_text("**Hello sir, I am Duru. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
@@ -43,7 +43,7 @@ async def chat_arvis(app, message):
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
         name = message.from_user.first_name
         if len(message.command) < 2:
-            await message.reply_text(f"**Hello {name}, I am Jarvis. How can I help you today?**")
+            await message.reply_text(f"**Hello {name}, I am Duru. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
@@ -61,7 +61,7 @@ async def chat_annie(app, message):
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
         name = message.from_user.first_name
         if len(message.command) < 2:
-            await message.reply_text(f"**Hello {name}, I am ANNIE. How can I help you today?**")
+            await message.reply_text(f"**Hello {name}, I am Duru. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
