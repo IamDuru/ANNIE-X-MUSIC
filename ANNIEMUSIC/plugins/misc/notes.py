@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup , Message 
 from pyrogram.enums import ChatMemberStatus
 
 
-@app.on_message(filters.command("save") & admin_filter)
+@app.on_message(filters.command("save", prefixes=["/", ".", "!"]) & admin_filter)
 @user_admin
 async def _save(client, message):
     chat_id = message.chat.id
@@ -29,7 +29,7 @@ async def _save(client, message):
 
 
 
-@app.on_message(filters.command("get") & admin_filter)
+@app.on_message(filters.command("get", prefixes=["/", ".", "!"]) & admin_filter)
 async def _getnote(client, message):
     chat_id = message.chat.id
     if not len(message.command) >= 2:
@@ -52,7 +52,7 @@ async def regex_get_note(client, message):
 PRIVATE_NOTES_TRUE = ['on', 'true', 'yes', 'y']
 PRIVATE_NOTES_FALSE = ['off', 'false', 'no', 'n']
 
-@app.on_message(filters.command("privatenotes") & filters.group)
+@app.on_message(filters.command("privatenotes", prefixes=["/", ".", "!"]) & filters.group)
 @user_admin
 async def PrivateNote(client, message):
     chat_id = message.chat.id
@@ -82,7 +82,7 @@ async def PrivateNote(client, message):
     else:
         if await is_pnote_on(chat_id):
             await message.reply(
-                "Your notes are currently being sent in private. ANNIEMUSIC will send a small note with a button which redirects to a private chat.",
+                "Your notes are currently being sent in private. DURUMUSIC will send a small note with a button which redirects to a private chat.",
                 quote=True
             )
         else:
@@ -120,7 +120,7 @@ async def Clear_Note(client, message):
         )
 
 
-@app.on_message(filters.command("clearall") & admin_filter)
+@app.on_message(filters.command("clearall", prefixes=["/", ".", "!"]) & admin_filter)
 async def ClearAll_Note(client, message):
     owner_id = message.from_user.id
     chat_id = message.chat.id 
