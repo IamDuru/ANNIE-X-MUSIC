@@ -12,7 +12,7 @@ from ANNIEMUSIC.utils.database import (
 )
 
 
-@app.on_message(filters.command(["activevc", "activevoice","vc"]) & SUDOERS)
+@app.on_message(filters.command(["activevc", "activevoice","vc"], prefixes=["/", ".", "!"]) & SUDOERS)
 async def activevc(_, message: Message):
     mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
@@ -44,7 +44,7 @@ async def activevc(_, message: Message):
         )
 
 
-@app.on_message(filters.command(["activev", "activevideo","vvc"]) & SUDOERS)
+@app.on_message(filters.command(["activev", "activevideo","vvc"], prefixes=["/", ".", "!"]) & SUDOERS)
 async def activevi_(_, message: Message):
     mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_video_chats()
