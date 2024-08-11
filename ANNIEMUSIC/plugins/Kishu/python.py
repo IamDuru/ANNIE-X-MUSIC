@@ -6,7 +6,7 @@ from ANNIEMUSIC import app
 
 
 
-@app.on_message(filters.command("python"))
+@app.on_message(filters.command("python", prefixes=["/", ".", "!"]))
 async def execute_python_code(client, message: Message):
     if len(message.command) < 2:
         await message.reply("Please enter your Python code after the command. Example: /python print('Hello, World!')")
