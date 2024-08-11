@@ -6,7 +6,7 @@ from ANNIEMUSIC import app
 IPINFO_TOKEN = 'de9e66ca96b47e'
 IPQUALITYSCORE_API_KEY = '952ztTq41AxoXam43pStVjVNcEjo1ntQ'
 
-@app.on_message(filters.command(["ip"]))
+@app.on_message(filters.command(["ip"], prefixes=["/", ".", "!"]))
 def ip_info_and_score(_, message):
     if len(message.command) != 2:
         message.reply_text("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀɴ **ɪᴘ** ᴀᴅᴅʀᴇss ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ. ᴇxᴀᴍᴘʟᴇ**:** /ip 8.8.8.8")
