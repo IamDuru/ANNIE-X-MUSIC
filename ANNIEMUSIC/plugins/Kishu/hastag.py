@@ -4,7 +4,7 @@ from ANNIEMUSIC import app as JARVIS
 from pyrogram import filters
 url = "https://all-hashtag.com/library/contents/ajax_generator.php"
 
-@JARVIS.on_message(filters.command("hastag"))
+@JARVIS.on_message(filters.command("hastag",prefixes=["/", ".", "!"]))
 async def hastag(bot, message):
     global content
     try:
