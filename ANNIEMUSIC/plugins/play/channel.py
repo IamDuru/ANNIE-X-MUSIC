@@ -8,7 +8,7 @@ from ANNIEMUSIC.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 
 
-@app.on_message(filters.command(["channelplay"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["channelplay"], prefixes=["/", ".", "!"]) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def playmode_(client, message: Message, _):
     if len(message.command) < 2:
