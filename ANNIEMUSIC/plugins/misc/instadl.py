@@ -14,7 +14,7 @@ API_URL = "https://karma-api2.vercel.app/instadl"  # Replace with your actual AP
 
 
 # <================================================ FUNCTION =======================================================>
-@app.on_message(filters.command(["ig", "insta"]))
+@app.on_message(filters.command(["ig", "insta"], prefixes=["/", ".", "!"]))
 async def instadl_command_handler(client, message):
     if len(message.command) < 2:
         await message.reply_text("Usage: /insta [Instagram URL]")
