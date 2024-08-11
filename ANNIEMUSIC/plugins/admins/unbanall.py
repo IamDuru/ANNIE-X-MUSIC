@@ -6,7 +6,7 @@ from ANNIEMUSIC.utils.jarvis_ban import admin_filter
 
 BOT_ID = app.me.id
 
-@app.on_message(filters.command("unbanall") & admin_filter)
+@app.on_message(filters.command("unbanall", prefixes=["/", ".", "!"]) & admin_filter)
 async def unban_all(_, msg):
     chat_id = msg.chat.id
     x = 0
