@@ -36,7 +36,7 @@ async def RemoveBG(input_file_name):
             return True, name
 
 
-@app.on_message(filters.command("rmbg"))
+@app.on_message(filters.command("rmbg", prefixes=["/", ".", "!"]))
 async def rmbg(bot, message):
     rmbg = await message.reply("Processing...") 
     replied = message.reply_to_message
