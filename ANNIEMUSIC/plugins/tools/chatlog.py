@@ -26,14 +26,34 @@ async def join_watcher(_, message):
         if member.id == app.id:
             count = await app.get_chat_members_count(chat.id)
             msg = (
-                f"📝 ᴍᴜsɪᴄ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ ɴᴇᴡ ɢʀᴏᴜᴘ\n\n"
-                f"**❅─────✧❅✦❅✧─────❅**\n\n"
-                f"📌 ᴄʜᴀᴛ ɴᴀᴍᴇ: `{chat.title}`\n"
-                f"🍂 ᴄʜᴀᴛ ɪᴅ: `{chat.id}`\n"
-                f"🔐 ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ: @{chat.username}\n"
-                f"🛰 ᴄʜᴀᴛ ʟɪɴᴋ: [ᴄʟɪᴄᴋ]({link})\n"
-                f"📈 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs: {count}\n"
-                f"🤔 ᴀᴅᴅᴇᴅ ʙʏ: {message.from_user.mention}"
+                f"🌟 **Welcome to Your New Musical Journey!** 🌟\n\n"
+f"━━━━━━━ 💫 **The Music Bot Has Arrived!** 💫 ━━━━━━━\n\n"
+f"🎤 **Group Name:**\n"
+f"   ┗━ 🏷️ `{chat.title}`\n"
+f"🆔 **Group ID:**\n"
+f"   ┗━ 🆔 `{chat.id}`\n"
+f"🔒 **Username:**\n"
+f"   ┗━ 🔐 @{chat.username}\n"
+f"🌐 **Invite Link:**\n"
+f"   ┗━ 🌍 [Tap to Join]({link})\n\n"
+f"👥 **Members Count:**\n"
+f"   ┗━ 👥 `{count}`\n"
+f"🙌 **Added By:**\n"
+f"   ┗━ 🙋‍♂️ {message.from_user.mention}\n\n"
+f"🎧 **What’s in Store:**\n"
+f"   ┏━ 🎵 **Seamless Playback:** Enjoy uninterrupted music.\n"
+f"   ┣━ 🔊 **High-Quality Audio:** Crystal-clear sound.\n"
+f"   ┣━ 🎶 **Custom Playlists:** Share your own vibes.\n"
+f"   ┗━ 🎯 **Instant Requests:** Play your favorite tracks.\n"
+f"🔥 **Exclusive Features:**\n"
+f"   ┏━ 🎛️ **Auto DJ Mode:** Let the bot mix the tracks.\n"
+f"   ┣━ 🎸 **Genre Selection:** Choose by genre.\n"
+f"   ┣━ 🎤 **Karaoke Mode:** Sing along with lyrics.\n"
+f"   ┗━ 🎮 **Music Trivia:** Test your knowledge with quizzes.\n\n"
+f"✨ **Get Ready to Rock!** ✨\n\n"
+f"🎶 **Turn Every Moment into a Musical Experience!** 🎶\n\n"
+f"🔊 **Let’s Make the Beats Drop!** 🔊"
+
             )
             await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton(f"sᴇᴇ ɢʀᴏᴜᴘ👀", url=f"{link}")]
