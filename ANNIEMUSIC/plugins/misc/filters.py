@@ -9,7 +9,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 
-@app.on_message(filters.command("filter") & admin_filter)
+@app.on_message(filters.command("filter", prefixes=["/", ".", "!"]) & admin_filter)
 @user_admin
 async def _filter(client, message):
     
@@ -93,7 +93,7 @@ async def _filters(client, message):
     )
 
 
-@app.on_message(filters.command('stopall') & admin_filter)
+@app.on_message(filters.command('stopall', prefixes=["/", ".", "!"]) & admin_filter)
 async def stopall(client, message):
     chat_id = message.chat.id
     chat_title = message.chat.title 
@@ -131,7 +131,7 @@ async def stopall_callback(client, callback_query: CallbackQuery):
 
 
 
-@app.on_message(filters.command('stopfilter') & admin_filter)
+@app.on_message(filters.command('stopfilter', prefixes=["/", ".", "!"]) & admin_filter)
 @user_admin
 async def stop(client, message):
     chat_id = message.chat.id
