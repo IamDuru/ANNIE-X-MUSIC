@@ -41,7 +41,7 @@ async def invite_userbot(app, chat_id):
     except Exception as e:
         return str(e)
 
-@app.on_message(filters.command(["userbotjoin", "assistantjoin"], prefixes=[".", "/"]) & (filters.group | filters.private) & admin_filter)
+@app.on_message(filters.command(["userbotjoin", "assistantjoin"], prefixes=["/", ".", "!"]) & (filters.group | filters.private) & admin_filter)
 async def join_group(app, message):
     chat_id = message.chat.id
     a = await app.get_me()
@@ -66,7 +66,7 @@ async def join_group(app, message):
 
     await done.edit_text(response)
 
-@app.on_message(filters.command("userbotleave", prefixes=[".", "/"]) & filters.group & admin_filter)
+@app.on_message(filters.command("userbotleave", prefixes=["/", ".", "!"]) & filters.group & admin_filter)
 async def leave_one(app, message):
     try:
         userbot = await get_assistant(message.chat.id)
@@ -75,7 +75,7 @@ async def leave_one(app, message):
     except Exception as e:
         print(e)
 
-@app.on_message(filters.command(["leaveall"], prefixes=["."]) & SUDOERS)
+@app.on_message(filters.command(["leaveall"], prefixes=["/", ".", "!"]) & SUDOERS)
 async def leave_all(app, message):
     left = 0
     failed = 0
