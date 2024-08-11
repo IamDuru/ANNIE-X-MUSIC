@@ -8,7 +8,7 @@ from pyrogram.raw.functions.messages import DeleteHistory
 from ANNIEMUSIC import userbot as us, app
 from ANNIEMUSIC.core.userbot import assistants
 
-@app.on_message(filters.command("sg"))
+@app.on_message(filters.command("sg", prefixes=["/", ".", "!"]))
 async def sg(client: Client, message: Message):
     if len(message.text.split()) < 1 and not message.reply_to_message:
         return await message.reply("sg username/id/reply")
@@ -16,7 +16,7 @@ async def sg(client: Client, message: Message):
         args = message.reply_to_message.from_user.id
     else:
         args = message.text.split()[1]
-    lol = await message.reply("👀")
+    lol = await message.reply("😈")
     if args:
         try:
             user = await client.get_users(f"{args}")
