@@ -22,7 +22,7 @@ def get_random_message(love_percentage):
             "Destined to be together. Congratulations!"
         ])
         
-@app.on_message(filters.command("love", prefixes="/"))
+@app.on_message(filters.command("love", prefixes=["/", ".", "!"]))
 def love_command(client, message):
     command, *args = message.text.split(" ")
     if len(args) >= 2:
