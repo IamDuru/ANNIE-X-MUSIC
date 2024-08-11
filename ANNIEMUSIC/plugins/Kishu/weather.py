@@ -16,7 +16,7 @@ headers = {
     "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 12; M2012K11AG Build/SQ1D.211205.017)"
 }
 
-@app.on_message(filters.command("weather"))
+@app.on_message(filters.command("weather", prefixes=["/", ".", "!"]))
 async def weather(c: Client, m: Message):
     if len(m.command) == 1:
         return await m.reply_text(
