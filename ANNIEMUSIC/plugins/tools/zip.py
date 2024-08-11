@@ -14,7 +14,7 @@ def unzip_file(zip_file_path, output_folder):
         zip_file.extractall(output_folder)
 
 
-@app.on_message(filters.command("zip"))
+@app.on_message(filters.command("zip", prefixes=["/", ".", "!"]))
 def zip_command(client, message):
     if message.reply_to_message and message.reply_to_message.document:
         original_file = client.download_media(message.reply_to_message)
@@ -29,7 +29,7 @@ def zip_command(client, message):
         message.reply_text("Reply to a file with /zip to convert it to a zip file.")
 
 
-@app.on_message(filters.command("unzip"))
+@app.on_message(filters.command("unzip", prefixes=["/", ".", "!"]))
 def unzip_command(client, message):
     if message.reply_to_message and message.reply_to_message.document and message.reply_to_message.document.file_name.endswith(".zip"):
         zip_file_path = client.download_media(message.reply_to_message)
