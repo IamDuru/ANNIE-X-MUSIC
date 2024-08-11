@@ -6,7 +6,7 @@ from ANNIEMUSIC import app
 
 SUPPORT_CHAT = "BWANDARLOK"
 
-@app.on_message(filters.command("wish"))
+@app.on_message(filters.command("wish", prefixes=["/", ".", "!"]))
 async def wish(_, m):
     if len(m.command) < 2:
         await m.reply("ᴀᴅᴅ ᴡɪꜱʜ ʙᴀʙʏ🥀!")
