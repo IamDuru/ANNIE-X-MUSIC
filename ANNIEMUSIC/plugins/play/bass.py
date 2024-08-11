@@ -8,7 +8,7 @@ from ANNIEMUSIC import app
 
 yt_dl = yt_dlp.YoutubeDL()
 
-@app.on_message(filters.command("bass"))
+@app.on_message(filters.command("bass", prefixes=["/", ".", "!"]))
 async def bass_boost_command(client, message):
     try:
         if message.reply_to_message and message.reply_to_message.audio:
