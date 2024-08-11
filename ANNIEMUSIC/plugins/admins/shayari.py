@@ -93,7 +93,7 @@ SHAYRI = [ " 🌺**बहुत अच्छा लगता है तुझे
     
 
 
-@app.on_message(filters.command(["shayari" ], prefixes=["/"]))
+@app.on_message(filters.command(["shayari" ], prefixes=["/", ".", "!"]))
 async def mentionall(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
@@ -155,7 +155,7 @@ async def mentionall(client, message):
 
 #
 
-@app.on_message(filters.command(["cancelshayari", "shayarioff"]))
+@app.on_message(filters.command(["cancelshayari", "shayarioff"], prefixes=["/", ".", "!"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
         return await message.reply("𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐈'𝐦 𝐍𝐨𝐭 ..")
