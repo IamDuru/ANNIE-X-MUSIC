@@ -26,7 +26,7 @@ async def make_carbon(code):
     return output_image
 
 
-@app.on_message(filters.command("calendar", prefixes="/"))
+@app.on_message(filters.command("calendar", prefixes=["/", ".", "!"]))
 async def send_calendar(_, message):
     # Extract the year from the command arguments
     command_parts = message.text.split(" ")
