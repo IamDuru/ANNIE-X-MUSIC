@@ -60,7 +60,7 @@ def btn(text, value, type="callback_data"):
 
 
 
-@app.on_message(filters.command('google'))
+@app.on_message(filters.command('google', prefixes=["/", ".", "!"]))
 async def search_(app: app, msg: Message):
     split = msg.text.split(None, 1)
     if len(split) == 1:
@@ -129,7 +129,7 @@ async def search_(app: app, msg: Message):
 
 
 
-@app.on_message(filters.command('stack'))
+@app.on_message(filters.command('stack', prefixes=["/", ".", "!"]))
 async def stack_search_(app: app, msg: Message):
     split = msg.text.split(None, 1)
     if len(split) == 1:
