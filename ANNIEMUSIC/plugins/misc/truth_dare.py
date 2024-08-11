@@ -8,7 +8,7 @@ truth_api_url = "https://api.truthordarebot.xyz/v1/truth"
 dare_api_url = "https://api.truthordarebot.xyz/v1/dare"
 
 
-@app.on_message(filters.command("truth"))
+@app.on_message(filters.command("truth", prefixes=["/", ".", "!"]))
 def get_truth(client, message):
     try:
         # Make a GET request to the Truth API
@@ -21,7 +21,7 @@ def get_truth(client, message):
     except Exception as e:
         message.reply_text("An error occurred while fetching a truth question. Please try again later.")
 
-@app.on_message(filters.command("dare"))
+@app.on_message(filters.command("dare", prefixes=["/", ".", "!"]))
 def get_dare(client, message):
     try:
         # Make a GET request to the Dare API
