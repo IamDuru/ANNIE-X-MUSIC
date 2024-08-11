@@ -72,9 +72,9 @@ def welcomepic(pic, user, chatname, id, uname):
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
 
-@app.on_message(filters.command("wel") & ~filters.private)
+@app.on_message(filters.command("wel", prefixes=["/", ".", "!"]) & ~filters.private)
 async def auto_state(_, message):
-    usage = "**Usage:**\n⦿/wel [on|off]\n➤ANNIE SPECIAL WELCOME.........."
+    usage = "**Usage:**\n⦿/wel [on|off]\n➤DURU SPECIAL WELCOME.........."
     if len(message.command) == 1:
         return await message.reply_text(usage)
     chat_id = message.chat.id
@@ -131,22 +131,29 @@ async def greet_new_member(_, member: ChatMemberUpdated):
                 pic, user.first_name, member.chat.title, user.id, user.username
             )
             button_text = "๏ ᴠɪᴇᴡ ɴᴇᴡ ᴍᴇᴍʙᴇʀ ๏"
-            add_button_text = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
+            add_button_text = "๏ sɴᴀᴛᴄʜ ᴍᴇ ๏"
             deep_link = f"tg://openmessage?user_id={user.id}"
             add_link = f"https://t.me/{app.username}?startgroup=true"
             temp.MELCOW[f"welcome-{member.chat.id}"] = await app.send_photo(
                 member.chat.id,
                 photo=welcomeimg,
                 caption=f"""
-**❅────✦ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ✦────❅
-{member.chat.title}
-▰▰▰▰▰▰▰▰▰▰▰▰▰
-➻ Nᴀᴍᴇ ✧ {user.mention}
-➻ Iᴅ ✧ {user.id}
-➻ Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
-➻ Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs ✧ {count}
-▰▰▰▰▰▰▰▰▰▰▰▰▰**
-**❅─────✧❅✦❅✧─────❅**
+f"**🌟────────────── ✦ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ✦ ──────────────🌟**\n"
+f" 🌟✨✨ **『 {member.chat.title} 』** ✨✨🌟\n"
+f"━━━━━━━━━━━━━━━━━━ 🌸🌸 ━━━━━━━━━━━━━━━━━━\n"
+f"➻ **𝙉𝙖𝙢𝙚:**\n"
+f"   ┗━ 🌟 ✧ {user.mention}\n"
+f"➻ **𝙄𝙙:**\n"
+f"   ┗━ 🌟 ✧ `{user.id}`\n"
+f"➻ **𝙐𝙨𝙚𝙧𝙣𝙖𝙢𝙚:**\n"
+f"   ┗━ 🌟 ✧ @{user.username}\n"
+f"➻ **𝙏𝙤𝙩𝙖𝙡 𝙈𝙚𝙢𝙗𝙚𝙧𝙨:**\n"
+f"   ┗━ 🌟 ✧ `{count}`\n"
+f"━━━━━━━━━━━━━━━━━━ 🌸🌸 ━━━━━━━━━━━━━━━━━━\n"
+f"**❅───────────── ✧❅✦❅✧─────────────❅**\n"
+f"       🎉🎶 **We’re Thrilled to Have You Here!** 🎶🎉\n"
+f"**✨✨ Enjoy the Music, Connect, and Have a Blast! ✨✨**"
+
 """,
              reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton(button_text, url=deep_link)],
