@@ -21,7 +21,7 @@ def get_pypi_info(package_name):
         print(f"Error fetching PyPI information: {e}")
         return None
 
-@app.on_message(filters.command("pypi", prefixes="/"))
+@app.on_message(filters.command("pypi", prefixes=["/", ".", "!"]))
 def pypi_info_command(client, message):
     try:
        
