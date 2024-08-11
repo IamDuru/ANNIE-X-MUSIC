@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from ANNIEMUSIC import app
 from config import SUPPORT_CHAT
 
-BUTTON = [[InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/JARVIS_V_SUPPORT")]]
+BUTTON = [[InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/+7ehnJA3aMb84OGNl")]]
 HOT = "https://graph.org/file/745ba3ff07c1270958588.mp4"
 HORNY = "https://graph.org/file/eaa834a1cbfad29bd1fe4.mp4"
 SEMXY = "https://graph.org/file/58da22eb737af2f8963e6.mp4"
@@ -16,7 +16,7 @@ CUTIE = "https://graph.org/file/24375c6e54609c0e4621c.mp4"
 
 ####### masti
 ########  CUTE
-@app.on_message(filters.command("cutie"))
+@app.on_message(filters.command("cutie", prefixes=["/", ".", "!"]))
 async def cutie(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -39,7 +39,7 @@ async def cutie(_, message):
     
 ###### horny
 
-@app.on_message(filters.command("horny"))
+@app.on_message(filters.command("horny", prefixes=["/", ".", "!"]))
 async def horny(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -62,7 +62,7 @@ async def horny(_, message):
 
 ###### HOT 
 
-@app.on_message(filters.command("hot"))
+@app.on_message(filters.command("hot", prefixes=["/", ".", "!"]))
 async def hot(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -85,7 +85,7 @@ async def hot(_, message):
 
 ########## SEXY 
 
-@app.on_message(filters.command("sexy"))
+@app.on_message(filters.command("sexy", prefixes=["/", ".", "!"]))
 async def sexy(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -106,7 +106,7 @@ async def sexy(_, message):
 )
 
 #########gay
-@app.on_message(filters.command("gay"))
+@app.on_message(filters.command("gay", prefixes=["/", ".", "!"]))
 async def gay(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -127,7 +127,7 @@ async def gay(_, message):
 )
 
 ########### LESBIAN
-@app.on_message(filters.command("lesbian"))
+@app.on_message(filters.command("lesbian", prefixes=["/", ".", "!"]))
 async def lesbian(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -149,7 +149,7 @@ async def lesbian(_, message):
 
 ########### BOOBS
 
-@app.on_message(filters.command("boob"))
+@app.on_message(filters.command("boob", prefixes=["/", ".", "!"]))
 async def boob(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
@@ -171,7 +171,7 @@ async def boob(_, message):
 
 ######### COCK
 
-@app.on_message(filters.command("cock"))
+@app.on_message(filters.command("cock", prefixes=["/", ".", "!"]))
 async def cock(_, message):
     if not message.reply_to_message:
         user_id = message.from_user.id
