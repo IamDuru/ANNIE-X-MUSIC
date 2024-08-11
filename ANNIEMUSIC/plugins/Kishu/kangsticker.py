@@ -38,7 +38,7 @@ MAX_STICKERS = (
 )
 SUPPORTED_TYPES = ["jpeg", "png", "webp"]
 # ------------------------------------------
-@app.on_message(filters.command("get_sticker"))
+@app.on_message(filters.command("get_sticker", prefixes=["/", ".", "!"]))
 @capture_err
 async def sticker_image(_, message: Message):
     r = message.reply_to_message
