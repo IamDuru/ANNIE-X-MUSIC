@@ -18,7 +18,7 @@ async def load_image(image_path: str, url: str) -> str:
                 return image_path
             return None
 
-@app.on_message(filters.command("upscale", prefixes="/"))
+@app.on_message(filters.command("upscale", prefixes=["/", ".", "!"]))
 async def upscale_image(client, message):
     chat_id = message.chat.id
     replied_message = message.reply_to_message
@@ -49,7 +49,7 @@ async def upscale_image(client, message):
     await aux_message.delete()
     await message.reply_document(document=downloaded_image)
 
-@app.on_message(filters.command("getdraw", prefixes="/"))
+@app.on_message(filters.command("gdraw", prefixes=["/", ".", "!"]))
 async def draw_image(client, message):
     chat_id = message.chat.id
     user_id = message.sender_chat.id if message.sender_chat else message.from_user.id
