@@ -5,7 +5,7 @@ from MukeshAPI import api
 from pyrogram.enums import ChatAction,ParseMode
 from ANNIEMUSIC import app
 
-@app.on_message(filters.command("imagine", prefixes=["/", ".", "!"]))
+@app.on_message(filters.command("draw", prefixes=["/", ".", "!"]))
 async def imagine_(b, message: Message):
     if message.reply_to_message:
         text = message.reply_to_message.text
@@ -32,5 +32,5 @@ async def imagine_(b, message: Message):
 
 __mod_name__ = "Aɪ ɪᴍᴀɢᴇ"
 __help__ = """
- ➻ /imagine : ɢᴇɴᴇʀᴀᴛᴇ Aɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
+ ➻ /draw : ɢᴇɴᴇʀᴀᴛᴇ Aɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
  """
