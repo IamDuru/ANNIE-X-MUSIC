@@ -37,7 +37,7 @@ async def chat_gpt(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for GPT chat with user's name
-@app.on_message(filters.command(["arvis"], prefixes=["j", "J"]))
+@app.on_message(filters.command(["uru"], prefixes=["d", "D"]))
 async def chat_arvis(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
@@ -54,14 +54,14 @@ async def chat_arvis(app, message):
     except Exception as e:
         await message.reply_text(f"**Error**: {e}")
 
-# Command for ANNIE with user's name
+# Command for DURU with user's name
 @app.on_message(filters.command(["iri"], prefixes=["s", "S"]))
 async def chat_annie(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
         name = message.from_user.first_name
         if len(message.command) < 2:
-            await message.reply_text(f"**Hello {name}, I am Duru. How can I help you today?**")
+            await message.reply_text(f"**Hello {name}, I am Siri. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
