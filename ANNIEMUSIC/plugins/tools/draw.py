@@ -136,7 +136,7 @@ async def draw(_: app, m: t.Message):
     global Database
     prompt = getText(m)
     if prompt is None:
-        return await m.reply_text("<code>ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴘʀᴏᴍᴘᴛ. ᴜsᴀɢᴇ: /draw <prompt></code>")
+        return await m.reply_text("<code>ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴘʀᴏᴍᴘᴛ. ᴜsᴀɢᴇ: /make <prompt></code>")
     user = m.from_user
     data = {'prompt':prompt,'reply_to_id':m.id}
     Database[user.id] = data
