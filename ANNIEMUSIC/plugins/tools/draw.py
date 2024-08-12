@@ -131,7 +131,7 @@ def paginate_models(page_n: int, models: list,user_id) -> list:
 
 
 
-@app.on_message(filters.command(["draw","create","craft","make"], prefixes=["/", ".", "!"]))
+@app.on_message(filters.command(["create","craft","make"], prefixes=["/", ".", "!"]))
 async def draw(_: app, m: t.Message):
     global Database
     prompt = getText(m)
