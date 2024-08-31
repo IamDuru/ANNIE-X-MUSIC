@@ -102,7 +102,7 @@ VC_TAG = [ "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ᴋᴇsᴇ ʜᴏ 🐱**",
         ]
 
 
-@app.on_message(filters.command(["gntag" ], , prefixes=["/", ".", "!"]))
+@app.on_message(filters.command(["gntag"])
 async def mentionall(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
@@ -162,7 +162,7 @@ async def mentionall(client, message):
         pass
 
 
-@app.on_message(filters.command(["gmtag"], prefixes=["/", ".", "!"]))
+@app.on_message(filters.command(["gmtag"])
 async def mention_allvc(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
@@ -207,7 +207,7 @@ async def mention_allvc(client, message):
 
 
 
-@app.on_message(filters.command(["gmstop", "gnstop"], prefixes=["/", ".", "!"]))
+@app.on_message(filters.command(["gmstop", "gnstop"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
         return await message.reply("๏ ᴄᴜʀʀᴇɴᴛʟʏ ɪ'ᴍ ɴᴏᴛ ᴛᴀɢɢɪɴɢ ʙᴀʙʏ.")
