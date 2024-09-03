@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram import enums, filters
 from ANNIEMUSIC import app
 
-@app.on_message(~filters.private & filters.command(["groupdata"], prefixes=["/", ".", "!"]), group=2)
+@app.on_message(~filters.private & filters.command(["groupdata"], prefixes=["/", "!", "%", ",", "-", ".", "@", "#"]), group=2)
 async def instatus(app, message):
     start_time = time.perf_counter()
     user = await app.get_chat_member(message.chat.id, message.from_user.id)
